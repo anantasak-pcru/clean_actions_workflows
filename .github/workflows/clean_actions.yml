@@ -1,0 +1,25 @@
+name: Clean Workflows
+on:
+  schedule:
+    - cron: '* * * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    
+    - name: install lib
+      run: pip install -r require.txt
+
+    - name: run script
+      run: python clean_actions.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        STATUS: skipped
+        REPOSITORY: anantasak-pcru/WSM
