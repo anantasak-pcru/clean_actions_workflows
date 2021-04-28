@@ -10,7 +10,7 @@ repository = os.environ["REPOSITORY"]
 token = os.environ["GITHUB_TOKEN"]
 status = os.environ["STATUS"]
 
-actions_url = "https://api.github.com/repos/{}/actions/runs?status={status}&per_page=10".format(repository, status)
+actions_url = "https://api.github.com/repos/{repo}/actions/runs?status={status}&per_page=10".format(repo=repository, status=status)
 delete_url = "https://api.github.com/repos/{}/actions/runs/".format(repository)
 
 header = {
