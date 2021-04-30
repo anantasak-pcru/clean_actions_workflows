@@ -32,7 +32,7 @@ while True:
         url = delete_url + run_id
         res=requests.delete(url=url, headers=header)
         if(res.status_code == 204):
-            print("🎉 Deleted {} success.".format(run_id))
+            print("🗑️ Deleted {} success.".format(run_id))
 
 print("🎉 Clean success...")
 
